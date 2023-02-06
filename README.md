@@ -12,3 +12,7 @@ Run:
 ```
 cargo test
 ```
+
+## Credits
+
+Based on https://github.com/omni7642/fluency-test
