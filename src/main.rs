@@ -1,5 +1,6 @@
 use sha2::{Digest, Sha256};
 
+/// Simple holder of calculation results
 #[derive(Debug, PartialEq)]
 struct HashAndPrefix {
     hash: String,
