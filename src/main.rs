@@ -15,7 +15,7 @@ fn main() {
     println!("{}\n{}", r.hash, r.prefix);
 }
 
-/// Perform a brute force search from [0,0,0,0] to [255, 255, 255, 255]
+/// Perform a brute force search from 0,0,0,0 to 255,255,255,255
 fn pow(input_string: &String) -> Option<HashAndPrefix> {
     let input_as_bytes = &hex::decode(input_string).unwrap()[..];
 
@@ -25,10 +25,11 @@ fn pow(input_string: &String) -> Option<HashAndPrefix> {
                 for b4 in 0..256 {
                     let r = pow_with_prefix(
                         input_as_bytes,
-                        &vec![b1 as u8, b2 as u8, b3 as u8, b4 as u8][..]);
+                        &vec![b1 as u8, b2 as u8, b3 as u8, b4 as u8][..],
+                    );
                     match r {
                         Some(_) => return r,
-                        None => continue
+                        None => continue,
                     }
                 }
             }
